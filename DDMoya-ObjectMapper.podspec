@@ -16,19 +16,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ldy694/DDMoya-ObjectMapper.git", :tag => s.version }
   s.default_subspec = "Core"
   s.swift_version = '5.0'
-
-  s.subspec "Core" do |ss|
-    ss.source_files  = "Source/Core/*.swift"
-    # ss.dependency "Moya/RxSwift", '15.0.0'
-    # ss.dependency "ObjectMapper"
-    ss.framework  = "Foundation"
-  end
-
-  s.subspec "RxSwift" do |ss|
-    ss.source_files = "Source/RxSwift/*.swift"
-    ss.dependency "DDMoya-ObjectMapper/Core"
-    ss.dependency "RxSwift", '6.5.0'
-    ss.dependency "Moya/RxSwift", '15.0.0'
-  end
+  s.source_files = "Source/RxSwift/*.swift", "Source/Core/*.swift"
 
 end
