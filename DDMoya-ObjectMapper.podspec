@@ -12,8 +12,17 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.source       = { :git => "https://github.com/ldy694/DDMoya-ObjectMapper.git", :tag => s.version }
   s.swift_version = '5.0'
-  s.source_files = "Source/RxSwift/*.swift", "Source/Core/*.swift"
-  s.requires_arc          = true
-  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64 arm64e' }
+  s.default_subspec = "Core"
+  s.source_files = "Source/RxSwift/*.swift"
+ 
 
+  s.subspec "Core" do |ss|
+    ss.source_files  = "Source/Core/*.swift"
+    ss.dependency "Moya", '15.0.0'
+    ss.dependency "ObjectMapper"
+    ss.framework  = "Foundation"
+  end
+
+
+  
 end
