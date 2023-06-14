@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ldy694/DDMoya-ObjectMapper.git", :tag => s.version }
   s.swift_version = '5.0'
   s.default_subspec = "Core"
-  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64 arm64e' }
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 arm64 arm64e' }
 
 
   s.subspec "Core" do |ss|
